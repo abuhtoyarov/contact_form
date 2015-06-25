@@ -33,7 +33,7 @@ gem 'cancancan'
 gem 'humanizer'
 gem 'sidekiq'
 gem 'dotenv'
-#gem 'dotenv-deployment', require: 'dotenv/deployment'
+gem 'dotenv-deployment', require: 'dotenv/deployment'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
