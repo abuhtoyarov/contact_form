@@ -14,7 +14,7 @@ class FeedbackMailer < ApplicationMailer
 		@body = feedback.message
 
 		if feedback.file.file
-			attachments[feedback.file.identifier] = File.read(feedback.file.current_path)
+			attachments["#{feedback.file.identifier}"] = File.read(feedback.file.current_path)
 		end
 
 		mail(to: "users1100@mail.ru", subject: 'Feedback')
