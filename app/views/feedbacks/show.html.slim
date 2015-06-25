@@ -1,0 +1,32 @@
+.container
+	.row
+		.col-md-8
+			h4 class="page-header" 
+				| Заявку написал #{@feedback.name}
+			section class="comment-list"
+				article class="row"
+					div class="col-md-10 col-sm-10"
+						div class="panel panel-default arrow left"
+							div class="panel-body"
+								header class="text-left"
+									div class="comment-user"
+										i class="fa fa-user" #{@feedback.name}
+									time class="comment-date" datetime="16-12-2014 01:05"
+										i class="fa fa-clock-o" #{@feedback.created_at}
+								div class="comment-post"
+									p= @feedback.message
+									- if @feedback.file.file
+										p Вложение:
+										= link_to @feedback.file.file.identifier, @feedback.file.url
+
+
+						div class="form-answer"
+							= form_tag(send_mail_feedback_path)
+								div class="form-group"
+									= text_area_tag 'message', nil, class: "form-control", placeholder: "Напишите ответ"
+								div class="form-group"	
+									= submit_tag 'Отправить сообщение.'
+
+
+
+

@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery_nested_form
 //= require turbolinks
 //= require_tree .

@@ -24,7 +24,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
-
+gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
+gem 'responders', '~> 2.0'
+gem 'carrierwave'
+gem 'remotipart'
+gem 'devise'
+gem 'cancancan'
+gem 'humanizer'
+gem 'sidekiq'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -34,6 +41,14 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-sidekiq', require: false
+  gem 'capistrano3-unicorn', require: false
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,6 +58,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'mailcatcher'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
