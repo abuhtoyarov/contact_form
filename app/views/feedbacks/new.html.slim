@@ -1,6 +1,6 @@
 div class="container"
 	div class="col-md-5"
-		div class="form-area" 
+		div class="form-area"
 			- if @feedback.errors.any?
 				- @feedback.errors.full_messages.each do |msg|
 					p= msg
@@ -13,9 +13,9 @@ div class="container"
 					= f.text_field :email, class: "form-control", placeholder: "Email: user@expamle.com"
 				div class="form-group"
 					= f.text_area :message, class: "form-control", placeholder: "Напишите вопрос"
-				div class="form-group"	
+				div class="form-group"
 					= f.file_field :file
-				div class="form-group"	
+				div class="form-group"
 					= f.label :humanizer_answer, @feedback.humanizer_question
 					= f.text_field :humanizer_answer
 					= f.hidden_field :humanizer_question_id

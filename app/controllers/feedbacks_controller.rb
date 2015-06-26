@@ -3,9 +3,9 @@ class FeedbacksController < ApplicationController
 	before_action :load_feedback, only: [:show, :destroy, :send_mail]
 
 	respond_to :html, :js
-	
+
 	authorize_resource
-	
+
 	def index
 		respond_with(@feedback = Feedback.all)
 	end

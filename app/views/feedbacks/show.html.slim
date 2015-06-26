@@ -1,7 +1,7 @@
 .container
 	.row
 		.col-md-8
-			h4 class="page-header" 
+			h4 class="page-header"
 				| Заявку написал #{@feedback.name}
 			section class="comment-list"
 				article class="row"
@@ -24,7 +24,7 @@
 							= form_tag(send_mail_feedback_path)
 								div class="form-group"
 									= text_area_tag 'message', nil, class: "form-control", placeholder: "Напишите ответ"
-								div class="form-group"	
+								div class="form-group"
 									= submit_tag 'Отправить сообщение.'
 
 

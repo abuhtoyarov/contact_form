@@ -6,7 +6,7 @@ class Feedback < ActiveRecord::Base
 
 	validates :name, :email, :message,  presence: true
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-		 
+
 	mount_uploader :file, ImageUploader
 
 	after_create :send_feedback
@@ -14,7 +14,7 @@ class Feedback < ActiveRecord::Base
 	def send_mail(message)
 		SendMailJob.perform_later(self.name, self.email, message)
 	end
-	
+
 	private
 
 	def send_feedback
