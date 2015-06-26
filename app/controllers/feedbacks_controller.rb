@@ -1,6 +1,4 @@
 class FeedbacksController < ApplicationController
-  
-  
   before_action :authenticate_user!, only: [:show]
   before_action :load_feedback, only: [:show, :destroy, :send_mail]
 
