@@ -18,7 +18,7 @@ feature 'Delete feedback', %q{
 		click_on 'Delete'
 
 		expect(page).to_not have_content feedback.name
-		expect(page).to have_content 'Feedback was successfully destroyed.'
+		expect(page).to have_content "Feedback was successfully destroyed."
 	end
 
 	scenario 'User not sees order' do

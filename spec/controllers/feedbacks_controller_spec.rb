@@ -36,7 +36,8 @@ RSpec.describe FeedbacksController, type: :controller do
 	end
 
 	describe 'GET #show' do
-
+    sign_in_user
+    
     before{ get :show, id: feedback }
 
     it 'Assings the requested feedback to @feedback' do

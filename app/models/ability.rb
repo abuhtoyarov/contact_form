@@ -14,7 +14,7 @@ class Ability
   end
 
   def guest_abilities
-    can :read, Feedback
+    can :index, Feedback
     can :create, Feedback
   end
 
